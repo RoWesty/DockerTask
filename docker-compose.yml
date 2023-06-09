@@ -7,9 +7,9 @@ services:
     env_file:
       - environment.env
     environment:
-      - POSTGRES_USER=$(POSTGRES_USER)
-      - POSTGRES_PASSWORD=$(POSTGRES_PASSWORD)
-      - POSTGRES_DB=$(POSTGRES_DB)
+      - POSTGRES_USER=world
+      - POSTGRES_PASSWORD=keylog
+      - POSTGRES_DB=Testdb
     volumes:
       - /var/lib/docker/volumes/test/_data
     healthcheck:
