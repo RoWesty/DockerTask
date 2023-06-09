@@ -9,7 +9,8 @@ services:
       - POSTGRES_PASSWORD=keylog
       - POSTGRES_DB=Testdb
     volumes:
-      - /var/lib/docker/volumes/test/_data
+      - ./db/volum/: /var/lib/docker/volumes/test/
+      - ./db/data/: /docker-entrypoint-initdb.d/
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres:latest"]
       interval: 5s
