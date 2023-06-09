@@ -7,7 +7,7 @@ services:
     env_file:
       - environment.env
     volumes:
-      - 
+      - test
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 5s
