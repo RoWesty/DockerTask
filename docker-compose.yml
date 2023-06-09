@@ -4,8 +4,6 @@ services:
     image: postgres:latest
     ports:
       - 5434:5432
-    env_file:
-      - environment.env
     environment:
       - POSTGRES_USER=world
       - POSTGRES_PASSWORD=keylog
@@ -13,8 +11,7 @@ services:
     volumes:
       - /var/lib/docker/volumes/test/_data
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "postgres"]
+      test: ["CMD", "pg_isready", "-U", "postgres:latest"]
       interval: 5s
       timeout: 5s
       retries: 5
-    restart: always
